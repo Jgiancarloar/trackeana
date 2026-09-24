@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
+
 import { Outfit } from "next/font/google";
+
 import "./globals.css";
 
 const outfit = Outfit({
   variable: "--font-outfit",
   subsets: ["latin"],
-})
+});
 
 export const metadata: Metadata = {
   title: "Trackeana",
@@ -14,17 +16,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: LayoutProps<"/">) {
   return (
     <html
-      lang="es"
+      lang="en"
       className={`${outfit.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-sans">
-        {children}
-      </body>
+      <body className="min-h-full flex flex-col font-sans">{children}</body>
     </html>
   );
 }
