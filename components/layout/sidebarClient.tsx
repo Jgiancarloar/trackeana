@@ -7,24 +7,22 @@ export default function SidebarClient() {
     const [menuOpen, setMenuOpen] = useState(false)
 
     const handleMenu = () => {
-        setMenuOpen(!menuOpen)
+        setMenuOpen((prev) => !prev)
     }
 
     //[#F6F6F6]
 
     return (
-        <aside className="fixed bg-red-500/20 p-5 w-full">
-            <div className='flex items-center justify-between w-full'>
-                <h2 className='font-bold text-xl'>
-                    Trackeana
-                </h2>
-                <button 
-                className={`${menuOpen ? 'rotate-180' : ''} transition-transform duration-300`}
-                onClick={handleMenu} 
-                >
-                    <ChevronsDown strokeWidth={2} />
+        <aside className="fixed bg-red-100 left-0 right-0 md:static top-0 w-full md:w-64">
+            <nav className="flex items-center justify-between p-5">
+                <h2>Trackeanaa</h2>
+                <button onClick={handleMenu}>
+                    <ChevronsDown />
                 </button>
-            </div>
+            </nav>
+            <nav className={menuOpen ? "block" : "hidden"}>
+                nav
+            </nav>
         </aside>
     );
 }

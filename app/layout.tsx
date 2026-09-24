@@ -22,7 +22,7 @@ export default function RootLayout({
       lang="en"
       className={`${outfit.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-sans">{children}</body>
+      <body className="bg-[#F6F6F6] min-h-full flex flex-col font-sans">{children}</body>
     </html>
   );
 }
